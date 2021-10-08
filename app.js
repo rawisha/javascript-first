@@ -206,35 +206,35 @@ om någon av dessa conditions inte uppfylls ska du visa en alertbox med texten "
 */
 
 function calculator(valueOne, valueTwo, operator) {
+  if(Number.isInteger(valueOne,valueTwo) === false || typeof operator !== 'string'){
+    alert("Något är fel")
+    return
+  }
   switch(operator){
-    case "-":
+    case "subtract":
       result = valueOne - valueTwo
       alert(result)
       break;
-    case '+':
+    case 'add':
       result = valueOne + valueTwo
       alert(result)
       break;
-    case '*':
+    case 'multiply':
       result = valueOne * valueTwo
       alert(result)
       console.log(typeof operator)
       break;
-    case '/':
+    case 'divide':
       result = valueOne / valueTwo
       alert(result)
       break;
     default:
-      if(Number.isInteger(valueOne,valueTwo) === false || typeof operator === 'string' ){
-        alert("Något är fel")
-      }
-
-      
+      alert("Något är fel")
   }
 }
 
 function taskTen() {
   //första och andra argumentet ska vara nummer, tredje argumentet ska
   //vara en sträng med något av värdena "add", "subtract", "multiply", "divide"
-  calculator(2,2,'*');
+  calculator(2,5,'multiply');
 }
